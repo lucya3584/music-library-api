@@ -10,3 +10,8 @@ exports.create = (req, res) => {
     res.status(201).json(artist);
   });
 };
+exports.list = (req, res) => {
+  Artist.find({}, (err, artists) => {
+    res.status(200).send(artists);
+  });
+};
